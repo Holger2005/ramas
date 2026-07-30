@@ -1,3 +1,101 @@
-body { font-family: sans-serif; background-color: #f4f4f4; color: #333; padding: 20px; }
-.comando { background: white; padding: 15px; margin-bottom: 10px; border-left: 5px solid #2ecc71; border-radius: 4px; }
-h1 { color: #2c3e50; }
+/* Paleta de colores Gamer en Azul Marino */
+:root {
+    --bg-marine-dark: #070c1a;        /* Fondo general azul marino muy oscuro */
+    --card-marine: #0f172a;           /* Fondo de las tarjetas azul marino sólido */
+    --accent-electric: #00d2ff;       /* Azul cian neón estilo gamer */
+    --accent-blue-violet: #6366f1;   /* Púrpura/Azul gamer de contraste */
+    --text-white: #f8fafc;            /* Texto principal brillante */
+    --text-muted: #94a3b8;            /* Texto secundario claro */
+    --code-box-bg: #030712;           /* Fondo sólido para títulos */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body { 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+    background-color: var(--bg-marine-dark); 
+    color: var(--text-white); 
+    line-height: 1.6;
+    padding-bottom: 50px;
+}
+
+/* Header con degradado marino profundo */
+header {
+    background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+    color: #ffffff;
+    padding: 45px 20px;
+    text-align: center;
+    border-bottom: 3px solid var(--accent-electric);
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+h1 { 
+    color: #ffffff; 
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+    text-shadow: 0 0 12px var(--accent-electric);
+}
+
+header p {
+    color: var(--accent-electric);
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Contenedor principal organizado en cuadrícula */
+#contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* Tarjetas de comandos oscuras (sin efectos overlay ni marcas superiores) */
+.comando { 
+    background-color: var(--card-marine); 
+    padding: 24px; 
+    border-left: 5px solid var(--accent-electric); 
+    border-radius: 10px; 
+    border-top: 1px solid #1e293b;
+    border-right: 1px solid #1e293b;
+    border-bottom: 1px solid #1e293b;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-left-color 0.2s ease;
+}
+
+/* Efecto hover estilo Gamer (resplandor controlado) */
+.comando:hover {
+    transform: translateY(-5px);
+    border-left-color: var(--accent-blue-violet);
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
+}
+
+/* Título estilo bloque terminal Gamer */
+.comando h2 {
+    color: var(--accent-electric);
+    background-color: var(--code-box-bg);
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 1.25rem;
+    margin-bottom: 14px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    display: inline-block;
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    text-shadow: 0 0 6px rgba(0, 210, 255, 0.4);
+}
+
+.comando p {
+    color: var(--text-muted);
+    font-size: 0.98rem;
+    line-height: 1.6;
+}
